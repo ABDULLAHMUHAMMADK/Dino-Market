@@ -3,7 +3,200 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Dine Market</title>
+    <style>
+      :root {
+        --accent: #0b2540;
+        --muted: #6b7280;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        color: #111;
+      }
+      .site-header {
+        background: #fff;
+        border-bottom: 1px solid #f1f1f3;
+      }
+      .container {
+        /* max-width: 1100px; */
+        margin: 10;
+        padding: 14px 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo img {
+        /* width: 42px;
+        height: 42px; */
+        /* object-fit: cover;
+        border-radius: 50%; */
+      }
+      .logo span {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 18px;
+      }
+      .main-nav {
+        flex: 1;
+        text-align: center;
+      }
+      .main-nav a {
+        color: var(--accent);
+        text-decoration: none;
+        margin: 0 18px;
+        font-weight: 700;
+      }
+      .main-nav a:hover {
+        opacity: 0.8;
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .cart {
+        position: relative;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid #eef2f6;
+        background: #f8fafc;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .cart svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--accent);
+      }
+      .badge {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        background: #ef4444;
+        color: #fff;
+        border-radius: 50%;
+        padding: 3px 6px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .auth {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .actions span {
+        color: var(--muted);
+      }
+      /* Hero */
+      .hero{
+        display:flex;align-items:center;justify-content:space-between;gap:40px;padding:60px 0
+    }
+
+      .hero .content{
+        flex:1;max-width:560px 
+    }
+      .kicker{
+        display:inline-block;background:#e9f2ff;color:#1e40af;padding:8px 14px;border-radius:20px;font-weight:700;margin-bottom:18px
+    }
+      .hero h1{
+        font-size:48px;line-height:1.02;margin:0 0 18px;color:#111;font-weight:800
+    }
+      .hero p.lead{color:#6b7280;margin:0 0 28px}
+      .btn{display:inline-block;background:#2b3742;color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:700}
+      .hero-media{width:480px;flex:0 0 480px;display:flex;align-items:center;justify-content:center;position:relative}
+      .hero-circle{width:420px;height:420px;border-radius:50%;background:#f9e8ef;position:absolute;right:0;top:0}
+      .hero-media img{width:320px;position:relative;z-index:2}
+      .partners{display:flex;gap:36px;align-items:center;justify-content:center;padding:60px 0;opacity:.6}
+      .partners img{height:28px}
+      @media (max-width:960px){
+        .hero{flex-direction:column-reverse;align-items:center;padding:40px 0}
+        .hero-media{width:100%;flex:0 0 auto}
+        .hero-circle{width:320px;height:320px}
+        .hero-media img{width:260px}
+        .hero h1{font-size:36px;text-align:center}
+        .hero .content{text-align:center}
+      }
+      @media (max-width: 720px) {
+        .container {
+          padding: 10px;
+        }
+        .main-nav {
+          display: none;
+        }
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">
+          <img src="image/logo.webp" alt="Dine Market logo" />
+          <!-- <span>Dine Market</span> -->
+        </div>
+
+        <nav class="main-nav" aria-label="Primary">
+          <a href="#">Female</a>
+          <a href="#">Male</a>
+          <a href="#">Kids</a>
+          <a href="#">All Products</a>
+        </nav>
+
+        <div class="actions">
+          <!-- <button class="cart" aria-label="Cart">
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M7 4h-2l-1 2v2h2l3.6 7.59-1.35 2.44A1 1 0 0 0 9 20h10v-2H9.42a.25.25 0 0 1-.22-.14L9.1 17h7.45a1 1 0 0 0 .95-.68l1.5-4.5A1 1 0 0 0 17 10H8.21l-.94-2H7V4z"
+              />
+            </svg>
+            <span class="badge">0</span>
+          </button> -->
+          <a class="auth" href="#">Login</a>
+          <span>/</span>
+          <a class="auth" href="#">Register</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero container">
+      <div class="content">
+        <div class="kicker">Sale 70%</div>
+        <h1>An Industrial Take On Streetwear</h1>
+        <p class="lead">Anyone can beat you but no one can beat your outfit as long as you wear Dine outfits.</p>
+        <a class="btn" href="#">Start Shopping</a>
+      </div>
+
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-circle"></div>
+        <img src="image/header.webp" alt="Model wearing dress" />
+      </div>
+    </section>
+
+    <section class="partners">
+      <img src="image/header.webp" alt="brand" />
+      <img src="image/header.webp" alt="brand" />
+      <img src="image/header.webp" alt="brand" />
+      <img src="image/header.webp" alt="brand" />
+    </section>
+  </body>
+</html>
+
+    <!-- hero section -->
+     
+  </body>
 </html>
