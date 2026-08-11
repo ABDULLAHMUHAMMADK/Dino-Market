@@ -139,7 +139,7 @@ a {
 /* ===== Product Grid (index page) ===== */
 .container {
   padding: 40px;
-  margin-left: 55px;
+  margin-left: 100px;
 }
 
 .product-grid {
@@ -154,7 +154,7 @@ a {
 }
 
 .product-card img {
-  width: 80%;
+  width: 65%;
   aspect-ratio: 1 / 1; 
   object-fit: cover;
   border-radius: 10px 0px 10px 0px;
@@ -331,7 +331,30 @@ hr {
   justify-content: center;
   font-size: 18px;
 }
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
 
+.social-icon {
+    width: 60px;
+    height: 60px;
+    background: #f1f1f1;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: #111;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.social-icon:hover {
+    background: #e5e5e5;
+}
 .social-links a:hover {
   background: #e2e2e6;
 }
