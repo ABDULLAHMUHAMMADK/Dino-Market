@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>suit - Dine Market</title>
+<link rel="stylesheet" href="kids.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <span class="ring"></span>
+      Dine Market
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">Female</a></li>
+      <li><a href="#">Male</a></li>
+      <li><a href="#">Kids</a></li>
+      <li><a href="#">All Products</a></li>
+      <li class="mobile-auth"><a href="#">Login / Register</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="cart">
+        🛒
+      </div>
+      <div class="auth-links">Login / Register</div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <a href="index.html" class="back-link">&#8592; Back to Products</a>
+
+    <div class="product-detail">
+
+      <div class="detail-images">
+        <div class="main-image">
+          <img id="mainImage" src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800" alt="suit">
+        </div>
+        <div class="thumbnail-row">
+          <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=200" class="active" onclick="changeImage(this)">
+          <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=200" onclick="changeImage(this)">
+          <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=200" onclick="changeImage(this)">
+          <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=200" onclick="changeImage(this)">
+        </div>
+      </div>
+
+      <div class="detail-info">
+        <h1>suit</h1>
+        <p class="subtitle">pent</p>
+        <p class="price">$60.00</p>
+
+        <hr>
+
+        <div class="description">
+          <h2>Description</h2>
+          <p>No description available.</p>
+        </div>
+
+        <button class="add-to-cart">🛒 Add to Cart</button>
+
+        <div class="product-details-box">
+          <h3>Product Details</h3>
+          <ul>
+            <li>Material: Premium quality</li>
+            <li>Color: As shown in image</li>
+            <li>Size: Standard fit</li>
+            <li>Care: Machine washable</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+ <footer class="footer">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="ring"></span>
+          Dine Market
+        </div>
+        <p>Small, artisan label that offers a thoughtfully curated collection of high quality everyday essentials made.</p>
+       <div class="social-icons">
+    <a href="#" class="social-icon">𝕏</a>
+    <a href="#" class="social-icon">f</a>
+    <a href="#" class="social-icon">in</a>
+</div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Support Center</a></li>
+          <li><a href="#">24h Services</a></li>
+          <li><a href="#">Quick Chat</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Whatsapp</a></li>
+          <li><a href="#">Support 24h</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 Dine Market</p>
+      <p>Design by: <strong>Mihaf khan</strong></p>
+      <p>Code by: <strong>Faheem khan</strong></p>
+    </div>
+  </footer>
+
+  <script>
+    function changeImage(thumb) {
+      document.getElementById('mainImage').src = thumb.src.replace('w=200', 'w=800');
+      document.querySelectorAll('.thumbnail-row img').forEach(img => img.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+    hamburgerBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      hamburgerBtn.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

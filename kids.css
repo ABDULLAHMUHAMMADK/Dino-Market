@@ -139,17 +139,13 @@ a {
 /* ===== Product Grid (index page) ===== */
 .container {
   padding: 40px;
-  padding-left: 100px;
+  margin-left: 100px;
 }
 
 .product-grid {
+ grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 30px;
-}
-.product-grid {
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
 }
 
 .product-card {
@@ -158,12 +154,15 @@ a {
 }
 
 .product-card img {
-  width: 80%;
-  aspect-ratio: 1 / 1;
+  width: 65%;
+  aspect-ratio: 1 / 1; 
   object-fit: cover;
-  border-radius: 20px 0 20px 0;
+  border-radius: 10px 0px 10px 0px;
+   transition: transform 0.3s ease;
 }
-
+.product-card img:hover {
+  transform: scale(1.05);
+}
 .product-card h3 {
   margin-top: 12px;
   font-size: 18px;
@@ -200,13 +199,6 @@ a {
   width: 100%;
   border-radius: 10px;
   object-fit: cover;
-}
-.product-card img {
-  transition: transform 0.3s ease;
-}
-
-.product-card img:hover {
-  transform: scale(1.05);
 }
 
 .thumbnail-row {
@@ -339,10 +331,6 @@ hr {
   justify-content: center;
   font-size: 18px;
 }
-
-.social-links a:hover {
-  background: #e2e2e6;
-}
 .social-icons {
     display: flex;
     gap: 20px;
@@ -366,6 +354,9 @@ hr {
 
 .social-icon:hover {
     background: #e5e5e5;
+}
+.social-links a:hover {
+  background: #e2e2e6;
 }
 
 .footer-col h4 {
