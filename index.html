@@ -207,6 +207,7 @@
       .wrap {
         max-width: 1200px;
         margin: 0 auto;
+        margin-top: 60px;
       }
 
       .eyebrow {
@@ -221,7 +222,7 @@
 
       h1 {
         text-align: center;
-        font-size: 42px;
+        /* font-size: 42px; */
         font-weight: 700;
         letter-spacing: -0.5px;
         color: var(--ink);
@@ -407,6 +408,190 @@
         background: #8a9a76;
       }
 
+      /* product cards */
+      .product-card-title {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        color: var(--gold);
+        /* margin-bottom: 14px; */
+        margin-top: 150px;
+      }
+      .product-h {
+        text-align: center;
+        /* font-size: 42px; */
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--ink);
+        /* margin-bottom: 56px; */
+      }
+
+      .slider-section {
+        width: 80%;
+        /* min-height: 100vh; */
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        /* padding: 40px 0; */
+        overflow: hidden;
+        margin: 0 auto;
+        /* margin-bottom: 500px; */
+      }
+
+      /* Slider */
+      /* .slider-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          black 8%,
+          black 92%,
+          transparent
+        );
+
+        -webkit-mask-image: linear-gradient(
+          90deg,
+          transparent,
+          black 8%,
+          black 92%,
+          transparent
+        );
+      } */
+
+      /* Moving Track */
+      .slider-track {
+        display: flex;
+        width: max-content;
+        gap: 28px;
+
+        animation: productScroll 25s linear infinite;
+      }
+
+      /* Product Card */
+      .product-card {
+        width: 320px;
+        flex-shrink: 0;
+        background: #ffffff;
+      }
+
+      /* Product Image */
+      .product-image-wrapper {
+        width: 320px;
+        height: 320px;
+
+        border-radius: 14px;
+        overflow: hidden;
+
+        background: #eeeeee;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        display: block;
+
+        transition:
+          transform 0.3s ease,
+          filter 0.3s ease;
+      }
+
+      /* Image Hover */
+      .product-card:hover .product-image {
+        transform: scale(1.05);
+        filter: brightness(1.05);
+      }
+
+      /* Product Information */
+      .product-info {
+        padding: 12px 8px;
+      }
+
+      .product-name {
+        margin: 0 0 10px;
+
+        font-size: 19px;
+        font-weight: 600;
+
+        color: #27344d;
+      }
+
+      .product-price {
+        margin: 0;
+
+        font-size: 18px;
+        font-weight: 500;
+
+        color: #27344d;
+      }
+
+      /* Infinite Animation */
+      @keyframes productScroll {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Pause animation when mouse is over slider */
+      .slider-track:hover {
+        animation-play-state: paused;
+      }
+
+      /* Tablet */
+      @media (max-width: 768px) {
+        .slider-section {
+          padding: 25px 0;
+        }
+
+        .slider-track {
+          gap: 18px;
+        }
+
+        .product-card {
+          width: 240px;
+        }
+
+        .product-image-wrapper {
+          width: 240px;
+          height: 240px;
+        }
+
+        .product-name {
+          font-size: 17px;
+        }
+
+        .product-price {
+          font-size: 16px;
+        }
+      }
+
+      /* Mobile */
+      @media (max-width: 480px) {
+        .product-card {
+          width: 200px;
+        }
+
+        .product-image-wrapper {
+          width: 200px;
+          height: 200px;
+        }
+
+        .slider-track {
+          gap: 15px;
+        }
+      }
       /* Responsive */
       @media (max-width: 860px) {
         .grid {
@@ -561,5 +746,15 @@
         </div>
       </div>
     </div>
+
+    <!-- products slider -->
+    <p class="product-card-title">PROMOTIONS</p>
+    <h1 class="product-h">Our Promotions Events</h1>
+    <section class="slider-section">
+      <div class="slider-track" id="sliderTrack">
+        <!-- Products will be added by JavaScript -->
+      </div>
+    </section>
+    <script src="index.js"></script>
   </body>
 </html>
