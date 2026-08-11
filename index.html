@@ -203,7 +203,7 @@
       }
 
       .wrap {
-        max-width: 1180px;
+        max-width: 1200px;
         margin: 0 auto;
       }
 
@@ -231,6 +231,8 @@
         grid-template-columns: 1.15fr 1fr 1fr;
         grid-template-rows: 220px 220px;
         gap: 18px;
+        max-width: 1100px;
+        margin: 0 auto;
       }
 
       .card {
@@ -243,11 +245,24 @@
 
       /* Card 1: hero % off, spans two rows */
       .card-hero {
+        position: relative;
         grid-column: 1;
         grid-row: 1 / span 2;
         background: linear-gradient(135deg, var(--mist) 0%, #dfe6ec 100%);
         padding: 40px;
-        justify-content: center;
+        /* justify-content: center; */
+        overflow: hidden;
+      }
+      .card-hero img {
+        position: absolute;
+        right: 0;
+        bottom: 220px;
+        width: 58%;
+        max-width: 320px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+        z-index: 1;
       }
       .card-hero .figure {
         position: absolute;
@@ -328,10 +343,12 @@
       .card-product.beige {
         background: var(--sand);
         grid-column: 2;
+        /* width: 300px; */
       }
       .card-product.grey {
         background: #d9d9d9;
         grid-column: 3;
+        /* width: 300px; */
       }
 
       .card-product .name {
