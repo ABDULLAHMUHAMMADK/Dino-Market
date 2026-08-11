@@ -16,14 +16,15 @@
         font-family: Arial, Helvetica, sans-serif;
         margin: 0;
         color: #111;
+        /* padding: 10px 20px; */
       }
       .site-header {
         background: #fff;
         border-bottom: 1px solid #f1f1f3;
       }
       .container {
-        /* max-width: 1100px; */
-        margin: 10;
+        width: 1200px;
+        margin: 0 auto;
         padding: 14px 20px;
         display: flex;
         align-items: center;
@@ -100,33 +101,359 @@
         color: var(--muted);
       }
       /* Hero */
-      .hero{
-        display:flex;align-items:center;justify-content:space-between;gap:40px;padding:60px 0
-    }
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 60px 0;
+        width: 70%;
+      }
 
-      .hero .content{
-        flex:1;max-width:560px 
-    }
-      .kicker{
-        display:inline-block;background:#e9f2ff;color:#1e40af;padding:8px 14px;border-radius:20px;font-weight:700;margin-bottom:18px
-    }
-      .hero h1{
-        font-size:48px;line-height:1.02;margin:0 0 18px;color:#111;font-weight:800
-    }
-      .hero p.lead{color:#6b7280;margin:0 0 28px}
-      .btn{display:inline-block;background:#2b3742;color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:700}
-      .hero-media{width:480px;flex:0 0 480px;display:flex;align-items:center;justify-content:center;position:relative}
-      .hero-circle{width:420px;height:420px;border-radius:50%;background:#f9e8ef;position:absolute;right:0;top:0}
-      .hero-media img{width:320px;position:relative;z-index:2}
-      .partners{display:flex;gap:36px;align-items:center;justify-content:center;padding:60px 0;opacity:.6}
-      .partners img{height:28px}
-      @media (max-width:960px){
-        .hero{flex-direction:column-reverse;align-items:center;padding:40px 0}
-        .hero-media{width:100%;flex:0 0 auto}
-        .hero-circle{width:320px;height:320px}
-        .hero-media img{width:260px}
-        .hero h1{font-size:36px;text-align:center}
-        .hero .content{text-align:center}
+      .hero .content {
+        flex: 1;
+        max-width: 560px;
+      }
+      .kicker {
+        display: inline-block;
+        background: #e9f2ff;
+        color: #1e40af;
+        padding: 8px 14px;
+        border-radius: 20px;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+      .hero h1 {
+        font-size: 48px;
+        /* line-height: 1.02; */
+        /* margin: 0 0 18px; */
+        color: #111;
+        font-weight: 800;
+        text-align: start;
+      }
+      .hero p.lead {
+        color: #6b7280;
+        margin: 0 0 28px;
+      }
+      .btn {
+        display: inline-block;
+        background: #2b3742;
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .hero-media {
+        width: 560px;
+        flex: 0 0 560px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .hero-circle {
+        width: 520px;
+        height: 520px;
+        border-radius: 50%;
+        background: #f9e8ef;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .hero-media img {
+        width: 500px;
+        position: relative;
+        z-index: 2;
+      }
+      .partners {
+        margin-top: 65px;
+        display: flex;
+        gap: 36px;
+        align-items: start;
+        justify-content: start;
+        padding: 60px 0;
+        opacity: 0.6;
+      }
+      .partners img {
+        height: 28px;
+      }
+      /* promotion */
+      :root {
+        --ink: #12162b;
+        --navy: #10142a;
+        --cream: #f7f3ea;
+        --paper: #ffffff;
+        --mist: #cdd7e0;
+        --sand: #e9dcc3;
+        --sage: #b9c2a7;
+        --gold: #c99a3f;
+        --muted: #6b7280;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Georgia", "Times New Roman", serif;
+        background: var(--cream);
+        color: var(--ink);
+        padding: 28px 20px;
+      }
+
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        color: var(--gold);
+        margin-bottom: 14px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 42px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--ink);
+        margin-bottom: 56px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr 1fr;
+        grid-template-rows: 220px 220px;
+        gap: 18px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Card 1: hero % off, spans two rows */
+      .card-hero {
+        position: relative;
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        background: linear-gradient(135deg, var(--mist) 0%, #dfe6ec 100%);
+        padding: 40px;
+        /* justify-content: center; */
+        overflow: hidden;
+      }
+      .card-hero img {
+        position: absolute;
+        right: 0;
+        bottom: 220px;
+        width: 58%;
+        max-width: 320px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+        z-index: 1;
+      }
+      .card-hero .figure {
+        position: absolute;
+        right: -20px;
+        bottom: 0;
+        width: 62%;
+        height: 92%;
+        background:
+          radial-gradient(circle at 50% 22%, #caa27a 0 13%, transparent 14%),
+          linear-gradient(180deg, #1c1f2b 0%, #2b2f3d 60%, transparent 100%);
+        border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+        opacity: 0.92;
+      }
+      .card-hero .label {
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #1e2536;
+      }
+      .card-hero .pct {
+        font-size: 44px;
+        font-weight: 800;
+        color: #1e2536;
+        line-height: 1.1;
+        margin: 4px 0 10px;
+      }
+      .card-hero .pct span {
+        font-size: 30px;
+        font-weight: 700;
+      }
+      .card-hero .sub {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: #3a4152;
+      }
+
+      /* Card 2: promo code, dark navy */
+      .card-promo {
+        grid-column: 1;
+        grid-row: 2;
+        background: var(--navy);
+        color: #fff;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 14px;
+        padding: 30px;
+      }
+      .card-promo .big {
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+      }
+      .card-promo .use {
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        letter-spacing: 2px;
+        color: #a9b0c4;
+      }
+      .card-promo .code {
+        font-family: Arial, sans-serif;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        padding: 8px 18px;
+        border-radius: 3px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      /* Product cards 3 & 4 */
+      .card-product {
+        grid-row: 1 / span 2;
+        padding: 22px 22px 0;
+        justify-content: flex-start;
+      }
+      .card-product.beige {
+        background: var(--sand);
+        grid-column: 2;
+        /* width: 300px; */
+      }
+      .card-product.grey {
+        background: #d9d9d9;
+        grid-column: 3;
+        /* width: 300px; */
+      }
+
+      .card-product .name {
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--ink);
+      }
+      .card-product .price {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        margin-top: 4px;
+      }
+      .card-product .price .old {
+        text-decoration: line-through;
+        color: var(--muted);
+        margin-right: 8px;
+      }
+      .card-product .price .new {
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .card-product .figure {
+        margin-top: 18px;
+        flex: 1;
+        border-radius: 2px 2px 0 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .figure .head {
+        position: absolute;
+        left: 50%;
+        top: 8%;
+        width: 26%;
+        aspect-ratio: 1/1;
+        background: #caa27a;
+        border-radius: 50%;
+        transform: translateX(-50%);
+      }
+      .figure .torso {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 68%;
+        height: 74%;
+        transform: translateX(-50%);
+        border-radius: 40% 40% 0 0;
+      }
+      .card-product.beige .torso {
+        background: #2b3350;
+      }
+      .card-product.grey .torso {
+        background: #8a9a76;
+      }
+
+      /* Responsive */
+      @media (max-width: 860px) {
+        .grid {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+        }
+        .card-hero,
+        .card-promo,
+        .card-product.beige,
+        .card-product.grey {
+          grid-column: 1;
+          grid-row: auto;
+        }
+        .card-hero {
+          min-height: 260px;
+        }
+        .card-product {
+          min-height: 320px;
+        }
+        h1 {
+          font-size: 30px;
+        }
+      }
+      @media (max-width: 960px) {
+        .hero {
+          flex-direction: column-reverse;
+          align-items: center;
+          padding: 40px 0;
+        }
+        .hero-media {
+          width: 100%;
+          flex: 0 0 auto;
+        }
+        .hero-circle {
+          width: 400px;
+          height: 400px;
+        }
+        .hero-media img {
+          width: 340px;
+        }
+        .hero h1 {
+          font-size: 36px;
+          text-align: center;
+        }
+        .hero .content {
+          text-align: center;
+        }
       }
       @media (max-width: 720px) {
         .container {
@@ -173,12 +500,23 @@
       </div>
     </header>
 
+    <!-- hero section -->
     <section class="hero container">
       <div class="content">
         <div class="kicker">Sale 70%</div>
         <h1>An Industrial Take On Streetwear</h1>
-        <p class="lead">Anyone can beat you but no one can beat your outfit as long as you wear Dine outfits.</p>
+        <p class="lead">
+          Anyone can beat you but no one can beat your outfit as long as you
+          wear Dine outfits.
+        </p>
         <a class="btn" href="#">Start Shopping</a>
+
+        <section class="partners">
+          <img src="image/Featured1.webp" alt="brand" />
+          <img src="image/Featured2.webp" alt="brand" />
+          <img src="image/Featured3.webp" alt="brand" />
+          <img src="image/Featured4.webp" alt="brand" />
+        </section>
       </div>
 
       <div class="hero-media" aria-hidden="true">
@@ -186,17 +524,42 @@
         <img src="image/header.webp" alt="Model wearing dress" />
       </div>
     </section>
+    <!-- promotion section -->
+    <div class="wrap">
+      <p class="eyebrow">PROMOTIONS</p>
+      <h1>Our Promotions Events</h1>
 
-    <section class="partners">
-      <img src="image/header.webp" alt="brand" />
-      <img src="image/header.webp" alt="brand" />
-      <img src="image/header.webp" alt="brand" />
-      <img src="image/header.webp" alt="brand" />
-    </section>
-  </body>
-</html>
+      <div class="grid">
+        <div class="card card-hero">
+          <p class="label">GET UPTO</p>
+          <p class="pct">60<span>%</span></p>
+          <p class="sub">For the summer season</p>
+          <img src="image/event1.webp" alt="Summer season promotion" />
+          <!-- <div class="figure"></div> -->
+        </div>
 
-    <!-- hero section -->
-     
+        <div class="card card-promo">
+          <p class="big">GET 30% OFF</p>
+          <p class="use">USE PROMO CODE</p>
+          <span class="code">DINEWEEKENDABLE</span>
+        </div>
+
+        <div class="card card-product beige">
+          <p class="name">Flex Sweatshirt</p>
+          <p class="price">
+            <span class="old">$100.00</span><span class="new">$75.00</span>
+          </p>
+          <img src="image/event2.webp" alt="Flex Sweatshirt" />
+        </div>
+
+        <div class="card card-product grey">
+          <p class="name">Flex Sweatshirt</p>
+          <p class="price">
+            <span class="old">$100.00</span><span class="new">$75.00</span>
+          </p>
+          <img src="image/event3.webp" alt="Flex Sweatshirt" />
+        </div>
+      </div>
+    </div>
   </body>
 </html>
