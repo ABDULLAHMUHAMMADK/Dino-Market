@@ -1,25 +1,25 @@
 const products = [
   {
     image: "image/Female2.png",
-    name: "Winter Coat",
+    name: "Casual Sneakers",
     price: "$120",
   },
 
   {
     image: "image/Female1.png",
-    name: "Silk Blouse",
+    name: "Floral Summer Dress",
     price: "$60",
   },
 
   {
     image: "image/Female3.png",
-    name: "Suit",
+    name: "Leather Handbag",
     price: "$60",
   },
 
   {
     image: "image/male1.png",
-    name: "T-Shirt",
+    name: "Classic Denim Jacket",
     price: "$40",
   },
 ];
