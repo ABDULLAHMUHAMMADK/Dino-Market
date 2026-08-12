@@ -16,7 +16,7 @@ body {
   display: grid;
   place-items: center;
   padding: 24px;
-  background: linear-gradient(180deg, #f8fafc 0%, #eef2f6 100%);
+  /* background: linear-gradient(180deg, #f8fafc 0%, #eef2f6 100%); */
 }
 
 .page-shell {
@@ -25,7 +25,7 @@ body {
 }
 
 .login-card {
-  background: #ffffff;
+  /* background: #ffffff; */
   border: 1px solid #e5e7eb;
   border-radius: 24px;
   box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
