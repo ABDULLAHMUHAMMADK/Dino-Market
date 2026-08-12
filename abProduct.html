@@ -1,51 +1,113 @@
+
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="abProduct.css" />
+    <title>Leather Boots - Dine Market</title>
+    <link rel="stylesheet" href="./abProduct.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
-      integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
   <body>
+    <!-- Navigation -->
     <header>
       <nav>
         <div class="logo">
-          <img
-            src="./allProduct_imgs/Logo.webp"
-            alt=""
-            width="135"
-            height="22"
-          />
+          <h1>Dine Market</h1>
         </div>
         <div class="tabs">
-          <a href="">Female</a>
-          <a href="">Male</a>
-          <a href="">Kids</a>
-          <a href="">All Product</a>
+          <a href="#">Female</a>
+          <a href="#">Male</a>
+          <a href="#">Kids</a>
+          <a href="#">All Products</a>
         </div>
         <div class="cart">
           <div class="cart-icon-div">
             <i class="fa-solid fa-cart-shopping"></i>
           </div>
           <button>Login</button>
-          <div>/</div>
-          <button>register</button>
+          <span>/</span>
+          <button>Register</button>
         </div>
       </nav>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <div></div>
-        <div></div>
+      <div class="container">
+        <!-- Back Button -->
+        <a href="#" class="back-btn" onclick="goBack()">
+          <i class="fa-solid fa-arrow-left"></i> Back to Products
+        </a>
+
+        <!-- Product Detail -->
+        <div class="product-detail" id="product-detail">
+          <!-- Product Image -->
+          <!-- <div class="product-image">
+            <div class="big_img">
+              <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop"
+                alt="Leather Boots"
+              />
+            </div>
+            <div class="small_img_div">
+              <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop"
+                alt="Leather Boots"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop"
+                alt="Leather Boots"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop"
+                alt="Leather Boots"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop"
+                alt="Leather Boots"
+              />
+            </div>
+          </div> -->
+
+          <!-- Product Info -->
+          <!-- <div class="product-info">
+            <h1 class="product-title">Leather Boots</h1>
+            <h3 class="product-category">Boots</h3>
+            <p class="product-price">$120.00</p>
+
+            <div class="product-description-section">
+              <h4>Description</h4>
+              <p>No description available.</p>
+            </div>
+
+            <button class="add-to-cart">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
+            <div class="product-details-section">
+              <h4>Product Details</h4>
+              <ul>
+                <li><span>Material:</span> Premium quality</li>
+                <li><span>Color:</span> As shown in image</li>
+                <li><span>Size:</span> Standard fit</li>
+                <li><span>Care:</span> Machine washable</li>
+              </ul>
+            </div>
+
+          </div> -->
+        </div>
+      </div>
     </main>
-
-
+    <script src="./allProuduct.js"></script>
+    <script src="./abProudct.js"></script>
+     <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
   </body>
 </html>
