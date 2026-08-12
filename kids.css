@@ -80,15 +80,72 @@ a {
   white-space: nowrap;
 }
 
-/* ===== Product Grid (index page) ===== */
-.container {
+/* ===== Hamburger Menu ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #1a1a2e;
+  transition: 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-auth {
+  display: none;
+}
+
+/* ===== Hero Section ===== */
+.hero {
   padding: 40px;
 }
 
-.product-grid {
+.hero-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.hero-grid img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ===== Product Grid (index page) ===== */
+.container {
+  padding: 40px;
+  margin-left: 100px;
+}
+
+.product-grid {
+ grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  display: grid;
 }
 
 .product-card {
@@ -97,12 +154,15 @@ a {
 }
 
 .product-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  width: 65%;
+  aspect-ratio: 1 / 1; 
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 10px 0px 10px 0px;
+   transition: transform 0.3s ease;
 }
-
+.product-card img:hover {
+  transform: scale(1.05);
+}
 .product-card h3 {
   margin-top: 12px;
   font-size: 18px;
@@ -271,7 +331,30 @@ hr {
   justify-content: center;
   font-size: 18px;
 }
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
 
+.social-icon {
+    width: 60px;
+    height: 60px;
+    background: #f1f1f1;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: #111;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.social-icon:hover {
+    background: #e5e5e5;
+}
 .social-links a:hover {
   background: #e2e2e6;
 }
@@ -317,18 +400,56 @@ hr {
 @media (max-width: 768px) {
   .navbar {
     padding: 15px 20px;
-    gap: 15px;
+    position: relative;
   }
 
   .nav-links {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    gap: 18px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 10px 20px 20px;
+    gap: 16px;
+    z-index: 10;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .mobile-auth {
+    display: block;
+    border-top: 1px solid #eee;
+    padding-top: 14px;
+  }
+
+  .nav-right {
+    gap: 14px;
+  }
+
+  .auth-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
   }
 
   .container {
     padding: 20px;
+  }
+
+  .hero {
+    padding: 20px;
+  }
+
+  .hero-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 
   .product-detail {
@@ -357,18 +478,18 @@ hr {
 }
 
 @media (max-width: 480px) {
-  .nav-links {
-    gap: 12px;
-    font-size: 14px;
-  }
-
   .logo {
     font-size: 18px;
   }
 
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
   .product-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 18px;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .footer-top {
