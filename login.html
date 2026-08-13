@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Dine Market</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="login-card">
+        <div class="card-header">
+          <h1 class="card-title">Login to your account</h1>
+          <p class="card-description">
+            Enter your email below to login to your account
+          </p>
+        </div>
+
+        <div class="card-content">
+          <form class="login-form">
+            <div class="field-group">
+              <label class="field-label" for="email">Email</label>
+              <input
+                class="field-input"
+                id="email"
+                type="email"
+                placeholder="m@example.com"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <div class="field-row">
+                <label class="field-label" for="password">Password</label>
+                <a class="field-link" href="#">Forgot your password?</a>
+              </div>
+              <input
+                class="field-input"
+                id="password"
+                type="password"
+                required
+              />
+            </div>
+
+            <div class="field-group field-actions">
+              <button class="button button-primary" type="submit">Login</button>
+              <button class="button button-secondary" type="button">
+                Login with Google
+              </button>
+            </div>
+
+            <p class="field-description">
+              Don&apos;t have an account? <a href="register.html">Sign up</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
