@@ -134,8 +134,16 @@ const products = [
 
       const ProductRender = document.getElementById("ProductRender");
 
-     function cardRender(products){ 
-const card= products.map(product =>{
+     const savedProducts = localStorage.getItem(products)
+     
+
+     if(savedProducts){
+        products.length=0
+        products.push(...JSON.parse(savedProducts))
+    }
+
+     function cardRender(pr){ 
+const card= pr.map(product =>{
         
       return  `
  <div class="card"  onclick= "viewProduct(${product.id})" >
