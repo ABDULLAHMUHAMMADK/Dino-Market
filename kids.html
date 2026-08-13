@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dine Market</title>
 <link rel="stylesheet" href="kids.css">
+<script src="kidsproduct.js" defer></script>
 </head>
 <body>
 
@@ -21,9 +22,7 @@
       <li class="mobile-auth"><a href="#">Login / Register</a></li>
     </ul>
     <div class="nav-right">
-      <div class="cart">
-        🛒
-      </div>
+      <div class="cart">🛒</div>
       <div class="auth-links">Login / Register</div>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
         <span></span>
@@ -32,65 +31,61 @@
       </button>
     </div>
   </nav>
-  <div class="container">
-    <div class="product-grid">
 
-      <a href="product.html" class="product-card">
-        <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=400" alt="suit">
-        <h3>suit</h3>
-        <p>pent</p>
-        <p class="price">$60</p>
-      </a>
+  <!-- ===== LISTING VIEW (product grid) ===== -->
+  <div id="listingView">
 
-      <a href="product.html" class="product-card">
-        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=400" alt="jacket">
-        <h3>jacket</h3>
-        <p>coat</p>
-        <p class="price">$85</p>
-      </a>
 
-      <a href="product.html" class="product-card">
-        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400" alt="dress">
-        <h3>dress</h3>
-        <p>gown</p>
-        <p class="price">$45</p>
-      </a>
+    <div class="container">
+      <div class="product-grid" id="productGrid">
+        <!-- Products yahan JS se dynamically aayenge -->
+      </div>
+    </div>
 
-      <a href="product.html" class="product-card">
-        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400" alt="shoes">
-        <h3>shoes</h3>
-        <p>sneakers</p>
-        <p class="price">$70</p>
-      </a>
+  </div>
 
-      <a href="product.html" class="product-card">
-        <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=400" alt="shirt">
-        <h3>shirt</h3>
-        <p>casual</p>
-        <p class="price">$30</p>
-      </a>
+  <!-- ===== DETAIL VIEW (single product) ===== -->
+  <div id="detailView" style="display:none;">
+    <div class="container">
+      <a href="#" id="backLink" class="back-link">&#8592; Back to Products</a>
 
-      <a href="product.html" class="product-card">
-        <img src="https://images.unsplash.com/photo-1542060748-10c28b62716f?w=400" alt="bag">
-        <h3>bag</h3>
-        <p>handbag</p>
-        <p class="price">$55</p>
-      </a>
+      <div class="product-detail">
 
-      <a href="product.html" class="product-card">
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="sneakers">
-        <h3>sneakers</h3>
-        <p>sports</p>
-        <p class="price">$65</p>
-      </a>
+        <div class="detail-images">
+          <div class="main-image">
+            <img id="mainImage" src="" alt="">
+          </div>
+          <div class="thumbnail-row" id="thumbnailRow">
+            <!-- Thumbnails JS se generate honge -->
+          </div>
+        </div>
 
-      <a href="product.html" class="product-card">
-        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400" alt="watch">
-        <h3>watch</h3>
-        <p>accessory</p>
-        <p class="price">$120</p>
-      </a>
+        <div class="detail-info">
+          <h1 id="productName"></h1>
+          <p class="subtitle" id="productCategory"></p>
+          <p class="price" id="productPrice"></p>
 
+          <hr>
+
+          <div class="description">
+            <h2>Description</h2>
+            <p>No description available.</p>
+          </div>
+
+          <button class="add-to-cart">🛒 Add to Cart</button>
+
+          <div class="product-details-box">
+            <h3>Product Details</h3>
+            <ul>
+              <li>Material: Premium quality</li>
+              <li>Color: As shown in image</li>
+              <li>Size: Standard fit</li>
+              <li>Care: Machine washable</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
@@ -103,11 +98,11 @@
           Dine Market
         </div>
         <p>Small, artisan label that offers a thoughtfully curated collection of high quality everyday essentials made.</p>
-       <div class="social-icons">
-    <a href="#" class="social-icon">𝕏</a>
-    <a href="#" class="social-icon">f</a>
-    <a href="#" class="social-icon">in</a>
-</div>
+        <div class="social-icons">
+          <a href="#" class="social-icon">𝕏</a>
+          <a href="#" class="social-icon">f</a>
+          <a href="#" class="social-icon">in</a>
+        </div>
       </div>
 
       <div class="footer-col">
@@ -146,15 +141,6 @@
       <p>Code by: <strong>Faheem khan</strong></p>
     </div>
   </footer>
-
-  <script>
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const navLinks = document.getElementById('navLinks');
-    hamburgerBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      hamburgerBtn.classList.toggle('open');
-    });
-  </script>
 
 </body>
 </html>
