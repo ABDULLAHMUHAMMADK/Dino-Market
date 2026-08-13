@@ -4,466 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dine Market</title>
-    <style>
-      :root {
-        --accent: #0b2540;
-        --muted: #6b7280;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0;
-        color: #111;
-        /* padding: 10px 20px; */
-      }
-      .site-header {
-        background: #fff;
-        border-bottom: 1px solid #f1f1f3;
-      }
-      .container {
-        width: 1200px;
-        margin: 0 auto;
-        padding: 14px 20px;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .logo img {
-        /* width: 42px;
-        height: 42px; */
-        /* object-fit: cover;
-        border-radius: 50%; */
-      }
-      .logo span {
-        font-weight: 700;
-        color: var(--accent);
-        font-size: 18px;
-      }
-      .main-nav {
-        flex: 1;
-        text-align: center;
-      }
-      .main-nav a {
-        color: var(--accent);
-        text-decoration: none;
-        margin: 0 18px;
-        font-weight: 700;
-      }
-      .main-nav a:hover {
-        opacity: 0.8;
-      }
-      .actions {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .cart {
-        position: relative;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        border: 1px solid #eef2f6;
-        background: #f8fafc;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-      }
-      .cart svg {
-        width: 20px;
-        height: 20px;
-        fill: var(--accent);
-      }
-      .badge {
-        position: absolute;
-        top: 6px;
-        right: 6px;
-        background: #ef4444;
-        color: #fff;
-        border-radius: 50%;
-        padding: 3px 6px;
-        font-size: 12px;
-        font-weight: 700;
-      }
-      .auth {
-        color: var(--accent);
-        text-decoration: none;
-        font-weight: 600;
-      }
-      .actions span {
-        color: var(--muted);
-      }
-      /* Hero */
-      .hero {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 40px;
-        padding: 60px 0;
-        width: 70%;
-      }
-
-      .hero .content {
-        flex: 1;
-        max-width: 560px;
-      }
-      .kicker {
-        display: inline-block;
-        background: #e9f2ff;
-        color: #1e40af;
-        padding: 8px 14px;
-        border-radius: 20px;
-        font-weight: 700;
-        margin-bottom: 18px;
-      }
-      .hero h1 {
-        font-size: 48px;
-        /* line-height: 1.02; */
-        /* margin: 0 0 18px; */
-        color: #111;
-        font-weight: 800;
-        text-align: start;
-      }
-      .hero p.lead {
-        color: #6b7280;
-        margin: 0 0 28px;
-      }
-      .btn {
-        display: inline-block;
-        background: #2b3742;
-        color: #fff;
-        padding: 12px 20px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 700;
-      }
-      .hero-media {
-        width: 560px;
-        flex: 0 0 560px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-      }
-      .hero-circle {
-        width: 520px;
-        height: 520px;
-        border-radius: 50%;
-        background: #f9e8ef;
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      .hero-media img {
-        width: 500px;
-        position: relative;
-        z-index: 2;
-      }
-      .partners {
-        margin-top: 65px;
-        display: flex;
-        gap: 36px;
-        align-items: start;
-        justify-content: start;
-        padding: 60px 0;
-        opacity: 0.6;
-      }
-      .partners img {
-        height: 28px;
-      }
-      /* promotion */
-      :root {
-        --ink: #12162b;
-        --navy: #10142a;
-        --cream: #f7f3ea;
-        --paper: #ffffff;
-        --mist: #cdd7e0;
-        --sand: #e9dcc3;
-        --sage: #b9c2a7;
-        --gold: #c99a3f;
-        --muted: #6b7280;
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: "Georgia", "Times New Roman", serif;
-        background: var(--cream);
-        color: var(--ink);
-        padding: 28px 20px;
-      }
-
-      .wrap {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .eyebrow {
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 3px;
-        color: var(--gold);
-        margin-bottom: 14px;
-      }
-
-      h1 {
-        text-align: center;
-        font-size: 42px;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-        color: var(--ink);
-        margin-bottom: 56px;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: 1.15fr 1fr 1fr;
-        grid-template-rows: 220px 220px;
-        gap: 18px;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-
-      .card {
-        position: relative;
-        overflow: hidden;
-        border-radius: 4px;
-        display: flex;
-        flex-direction: column;
-      }
-
-      /* Card 1: hero % off, spans two rows */
-      .card-hero {
-        position: relative;
-        grid-column: 1;
-        grid-row: 1 / span 2;
-        background: linear-gradient(135deg, var(--mist) 0%, #dfe6ec 100%);
-        padding: 40px;
-        /* justify-content: center; */
-        overflow: hidden;
-      }
-      .card-hero img {
-        position: absolute;
-        right: 0;
-        bottom: 220px;
-        width: 58%;
-        max-width: 320px;
-        height: auto;
-        object-fit: contain;
-        border-radius: 50% 50% 0 0 / 30% 30% 0 0;
-        z-index: 1;
-      }
-      .card-hero .figure {
-        position: absolute;
-        right: -20px;
-        bottom: 0;
-        width: 62%;
-        height: 92%;
-        background:
-          radial-gradient(circle at 50% 22%, #caa27a 0 13%, transparent 14%),
-          linear-gradient(180deg, #1c1f2b 0%, #2b2f3d 60%, transparent 100%);
-        border-radius: 50% 50% 0 0 / 30% 30% 0 0;
-        opacity: 0.92;
-      }
-      .card-hero .label {
-        font-family: Arial, sans-serif;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        color: #1e2536;
-      }
-      .card-hero .pct {
-        font-size: 44px;
-        font-weight: 800;
-        color: #1e2536;
-        line-height: 1.1;
-        margin: 4px 0 10px;
-      }
-      .card-hero .pct span {
-        font-size: 30px;
-        font-weight: 700;
-      }
-      .card-hero .sub {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        color: #3a4152;
-      }
-
-      /* Card 2: promo code, dark navy */
-      .card-promo {
-        grid-column: 1;
-        grid-row: 2;
-        background: var(--navy);
-        color: #fff;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 14px;
-        padding: 30px;
-      }
-      .card-promo .big {
-        font-size: 30px;
-        font-weight: 800;
-        letter-spacing: 0.5px;
-      }
-      .card-promo .use {
-        font-family: Arial, sans-serif;
-        font-size: 11px;
-        letter-spacing: 2px;
-        color: #a9b0c4;
-      }
-      .card-promo .code {
-        font-family: Arial, sans-serif;
-        background: rgba(255, 255, 255, 0.14);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        padding: 8px 18px;
-        border-radius: 3px;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 1px;
-      }
-
-      /* Product cards 3 & 4 */
-      .card-product {
-        grid-row: 1 / span 2;
-        padding: 22px 22px 0;
-        justify-content: flex-start;
-      }
-      .card-product.beige {
-        background: var(--sand);
-        grid-column: 2;
-        /* width: 300px; */
-      }
-      .card-product.grey {
-        background: #d9d9d9;
-        grid-column: 3;
-        /* width: 300px; */
-      }
-
-      .card-product .name {
-        font-family: Arial, sans-serif;
-        font-size: 15px;
-        font-weight: 700;
-        color: var(--ink);
-      }
-      .card-product .price {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        margin-top: 4px;
-      }
-      .card-product .price .old {
-        text-decoration: line-through;
-        color: var(--muted);
-        margin-right: 8px;
-      }
-      .card-product .price .new {
-        font-weight: 700;
-        color: var(--ink);
-      }
-
-      .card-product .figure {
-        margin-top: 18px;
-        flex: 1;
-        border-radius: 2px 2px 0 0;
-        position: relative;
-        overflow: hidden;
-      }
-      .figure .head {
-        position: absolute;
-        left: 50%;
-        top: 8%;
-        width: 26%;
-        aspect-ratio: 1/1;
-        background: #caa27a;
-        border-radius: 50%;
-        transform: translateX(-50%);
-      }
-      .figure .torso {
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        width: 68%;
-        height: 74%;
-        transform: translateX(-50%);
-        border-radius: 40% 40% 0 0;
-      }
-      .card-product.beige .torso {
-        background: #2b3350;
-      }
-      .card-product.grey .torso {
-        background: #8a9a76;
-      }
-
-      /* Responsive */
-      @media (max-width: 860px) {
-        .grid {
-          grid-template-columns: 1fr;
-          grid-template-rows: auto;
-        }
-        .card-hero,
-        .card-promo,
-        .card-product.beige,
-        .card-product.grey {
-          grid-column: 1;
-          grid-row: auto;
-        }
-        .card-hero {
-          min-height: 260px;
-        }
-        .card-product {
-          min-height: 320px;
-        }
-        h1 {
-          font-size: 30px;
-        }
-      }
-      @media (max-width: 960px) {
-        .hero {
-          flex-direction: column-reverse;
-          align-items: center;
-          padding: 40px 0;
-        }
-        .hero-media {
-          width: 100%;
-          flex: 0 0 auto;
-        }
-        .hero-circle {
-          width: 400px;
-          height: 400px;
-        }
-        .hero-media img {
-          width: 340px;
-        }
-        .hero h1 {
-          font-size: 36px;
-          text-align: center;
-        }
-        .hero .content {
-          text-align: center;
-        }
-      }
-      @media (max-width: 720px) {
-        .container {
-          padding: 10px;
-        }
-        .main-nav {
-          display: none;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+      integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header class="site-header">
@@ -473,29 +21,39 @@
           <!-- <span>Dine Market</span> -->
         </div>
 
+        <button
+          class="menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
         <nav class="main-nav" aria-label="Primary">
-          <a href="#">Female</a>
-          <a href="#">Male</a>
-          <a href="#">Kids</a>
-          <a href="#">All Products</a>
+          <a href="female.html">Female</a>
+          <a href="male.html">Male</a>
+          <a href="kids.html">Kids</a>
+          <a href="allProduct.html">All Products</a>
+
+          <div class="mobile-menu-actions">
+            <button class="cart" aria-label="Cart">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <div class="mobile-auth-links">
+              <a class="auth" href="login.html">Login</a>
+              <span>/</span>
+              <a class="auth" href="register.html">Register</a>
+            </div>
+          </div>
         </nav>
 
         <div class="actions">
-          <!-- <button class="cart" aria-label="Cart">
-            <svg
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M7 4h-2l-1 2v2h2l3.6 7.59-1.35 2.44A1 1 0 0 0 9 20h10v-2H9.42a.25.25 0 0 1-.22-.14L9.1 17h7.45a1 1 0 0 0 .95-.68l1.5-4.5A1 1 0 0 0 17 10H8.21l-.94-2H7V4z"
-              />
-            </svg>
-            <span class="badge">0</span>
-          </button> -->
-          <a class="auth" href="#">Login</a>
+          <button class="cart" aria-label="Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+          <a class="auth" href="login.html">Login</a>
           <span>/</span>
-          <a class="auth" href="#">Register</a>
+          <a class="auth" href="register.html">Register</a>
         </div>
       </div>
     </header>
@@ -561,5 +119,150 @@
         </div>
       </div>
     </div>
+
+    <!-- products slider -->
+    <p class="product-card-title">PROMOTIONS</p>
+    <h1 class="product-h">Our Promotions Events</h1>
+    <section class="slider-section">
+      <div class="slider-track" id="sliderTrack">
+        <!-- Products will be added by JavaScript -->
+      </div>
+    </section>
+
+    <!--  -->
+    <section class="section">
+      <!-- <div class="watermark">Different<br />from<br />others</div> -->
+
+      <!-- Left column -->
+      <div class="features">
+        <div class="feature">
+          <h3>Using Good Quality Materials</h3>
+          <p>
+            Individuals can enjoy the benefits of comfort, durability, and
+            sustainability in clothing choices
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3>100% Handsome Prouducts</h3>
+          <p>
+            Using 100% handsome products elevates the grooming and self-care
+            experience to new heights.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3>Modern Fashion Design</h3>
+          <p>
+            Modern fashion design is an ever-evolving realm where creativity
+            meets innovation.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3>Discount for Bulk Orders</h3>
+          <p>
+            Discounts for bulk orders provide a compelling incentive for
+            businesses.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right column -->
+      <div class="content">
+        <h1>Unique and Authentic Vintage Designer Jewellery</h1>
+
+        <div class="product-row">
+          <img
+            class="product-image"
+            src="image/Female1.png"
+            alt="Woman wearing black sweatshirt"
+          />
+
+          <div class="product-info">
+            <p>
+              This piece is ethically crafted in our small family-owned workshop
+              in Peru with unmatched attention to detail and care. The Natural
+              color is the actual natural color of the fiber, undyed and 100%
+              traceable.
+            </p>
+
+            <button class="cta-button">See All Products</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- subcription  -->
+    <section class="section-sub">
+      <div class="content-new">
+        <h1>Subscribe to our newsletter</h1>
+
+        <p>
+          Get the latest information and promo offers directly to your inbox.
+        </p>
+
+        <div class="product-infomation">
+          <input type="email" placeholder="Enter your email" />
+          <button class="ct-button">Get Started</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="ring"></span>
+            Dine Market
+          </div>
+          <p>
+            Small, artisan label that offers a thoughtfully curated collection
+            of high quality everyday essentials made.
+          </p>
+          <div class="social-icons">
+            <a href="#" class="social-icon">𝕏</a>
+            <a href="#" class="social-icon">f</a>
+            <a href="#" class="social-icon">in</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Terms of use</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">How it works</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Support Center</a></li>
+            <li><a href="#">24h Services</a></li>
+            <li><a href="#">Quick Chat</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">Whatsapp</a></li>
+            <li><a href="#">Support 24h</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Copyright &copy; 2026 Dine Market</p>
+        <p>Design by: <strong>mir</strong></p>
+        <p>Code by: <strong>hamza mir</strong></p>
+      </div>
+    </footer>
+    <script src="index.js"></script>
   </body>
 </html>
