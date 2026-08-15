@@ -1,6 +1,5 @@
 const form = document.getElementById("productForm");
-console.log("abdullh")
-
+console.log("abdullah")
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -21,8 +20,8 @@ form.addEventListener("submit", function (e) {
 
 
   products.push(newProduct)
-
   localStorage.setItem("products",JSON.stringify(products))
+//   console.log(JSON.parse(localStorage.getItem("products")))
 
 form.reset();
 
