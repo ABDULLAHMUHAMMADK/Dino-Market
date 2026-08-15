@@ -39,5 +39,6 @@ const products = [
     description: "Formal aur casual dono occasions ke liye suitable trouser, premium fabric ke sath.",
     sizes: ["30", "32", "34", "36", "38"],
     stock: 30
-  }
+  },
+
 ];
