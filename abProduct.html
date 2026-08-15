@@ -11,97 +11,110 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+      integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- Navigation -->
     <header>
       <nav>
         <div class="logo">
-          <h1>Dine Market</h1>
+          <a href="./index.html"><img
+            src="./allProduct_imgs/Logo.webp"
+            alt=""
+            width="135"
+            height="22"
+          /></a>
         </div>
         <div class="tabs">
           <a href="#">Female</a>
-          <a href="#">Male</a>
-          <a href="#">Kids</a>
-          <a href="#">All Products</a>
+          <a href="./male.html">Male</a>
+          <a href="./kids.html">Kids</a>
+          <a href="./allProduct.html">All Product</a>
         </div>
         <div class="cart">
+   
+          <a href="./addProduct.html"><button>Add Product</button></a>
+
           <div class="cart-icon-div">
             <i class="fa-solid fa-cart-shopping"></i>
           </div>
-          <button>Login</button>
-          <span>/</span>
-          <button>Register</button>
+
+         <a href="./login.html"> <button>Login</button></a>
+          <div>/</div>
+         <a href="./register.html"> <button>register</button></a>
         </div>
       </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
       <div class="container">
-        <!-- Back Button -->
         <a href="#" class="back-btn" onclick="goBack()">
           <i class="fa-solid fa-arrow-left"></i> Back to Products
         </a>
 
-        <!-- Product Detail -->
         <div class="product-detail" id="product-detail">
-          <!-- Product Image -->
-          <!-- <div class="product-image">
-            <div class="big_img">
-              <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop"
-                alt="Leather Boots"
-              />
-            </div>
-            <div class="small_img_div">
-              <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop"
-                alt="Leather Boots"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop"
-                alt="Leather Boots"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop"
-                alt="Leather Boots"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop"
-                alt="Leather Boots"
-              />
-            </div>
-          </div> -->
-
-          <!-- Product Info -->
-          <!-- <div class="product-info">
-            <h1 class="product-title">Leather Boots</h1>
-            <h3 class="product-category">Boots</h3>
-            <p class="product-price">$120.00</p>
-
-            <div class="product-description-section">
-              <h4>Description</h4>
-              <p>No description available.</p>
-            </div>
-
-            <button class="add-to-cart">
-              <i class="fa-solid fa-cart-plus"></i> Add to Cart
-            </button>
-            <div class="product-details-section">
-              <h4>Product Details</h4>
-              <ul>
-                <li><span>Material:</span> Premium quality</li>
-                <li><span>Color:</span> As shown in image</li>
-                <li><span>Size:</span> Standard fit</li>
-                <li><span>Care:</span> Machine washable</li>
-              </ul>
-            </div>
-
-          </div> -->
         </div>
       </div>
     </main>
+
+      <footer class="footer">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="ring"></span>
+          Dine Market
+        </div>
+        <p>Small, artisan label that offers a thoughtfully curated collection of high quality everyday essentials made.</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon">𝕏</a>
+          <a href="#" class="social-icon">f</a>
+          <a href="#" class="social-icon">in</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Support Center</a></li>
+          <li><a href="#">24h Services</a></li>
+          <li><a href="#">Quick Chat</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Whatsapp</a></li>
+          <li><a href="#">Support 24h</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 Dine Market</p>
+      <p>Design by: <strong>MUHAMMAD ABDULLAH</strong></p>
+      <p>Code by: <strong>MUHAMMAD ABDULLAH</strong></p>
+    </div>
+  </footer>
     <script src="./allProuduct.js"></script>
     <script src="./abProudct.js"></script>
      <script>
