@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="male.css" />
+
+</head>
+
+<body>
+  <header>
+    <nav class="site-nav">
+      <a class="nav-brand" href="male.html">
+        <img src="./male.images/Logo.webp" alt="logo" />
+        <span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="female.html">Female</a></li>
+        <li><a href="male.html">Male</a></li>
+        <li><a href="kids.html">Kids</a></li>
+        <li><a href="allProuduct.html">All Products</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="cart-link" href="#">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-badge" id="cartCount">0</span>
+        </a>
+        <a class="auth-link" href="#">Login / Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <div id="detailsContainer" class="details-wrap"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="ring"></span>
+          Dine Market
+        </div>
+        <p>Small, artisan label that offers a thoughtfully curated collection of high quality everyday
+          essentials made..</p>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="LinkedIn">💼</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Support Center</a></li>
+          <li><a href="#">24h Services</a></li>
+          <li><a href="#">Quick Chat</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Whatsapp</a></li>
+          <li><a href="#">Support 24h</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 Dine Market</p>
+      <p>Design by: <strong>Farman</strong></p>
+      <p>Code by: <strong>farman</strong></p>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script>
+    // Debug: check if products.js loaded correctly
+    console.log("Products loaded:", typeof products !== "undefined" ? products : "products.js NOT FOUND");
+
+    // Get the "id" value from the URL query string
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get("id");
+    console.log("ID from URL:", productId);
+
+    // Find the matching product in the array (case-insensitive)
+    const product = products.find(function (item) {
+      return item.id.toLowerCase() === (productId || "").toLowerCase();
+    });
+    console.log("Matched product:", product);
+
+    const container = document.getElementById("detailsContainer");
+
+    if (!product) {
+      // Show a fallback message if no matching product was found
+      container.innerHTML = `
+                <div class="not-found">
+                    <h2>Product not found</h2>
+                    <p>This product is not available or the link is incorrect. (ID: ${productId})</p>
+                    <a href="male.html">Back to Shopping</a>
+                </div>
+            `;
+    } else {
+      // Build the list of size options using map()
+      const sizesHTML = product.sizes
+        .map(function (size) {
+          return `<span class="size-box">${size}</span>`;
+        })
+        .join("");
+
+      // Render the full product details
+      container.innerHTML = `
+                <div class="details-img">
+                    <img src="${product.image}" alt="${product.title}">
+                </div>
+                <div class="details-info">
+                    <h1>${product.title}</h1>
+                    <p class="details-category">${product.category}</p>
+                    <p class="details-price">$${product.price.toFixed(2)}</p>
+                    <p class="details-desc">${product.description}</p>
+
+                    <h4>Select Size:</h4>
+                    <div class="size-list">${sizesHTML}</div>
+
+                    <button class="add-cart-btn" id="addCartBtn">Add to Cart</button>
+                </div>
+            `;
+
+      // Size selection click event
+      document.querySelectorAll(".size-box").forEach(function (box) {
+        box.addEventListener("click", function () {
+          document.querySelectorAll(".size-box").forEach(function (b) {
+            b.classList.remove("active");
+          });
+          box.classList.add("active");
+        });
+      });
+
+      // Add to cart button click event
+      document.getElementById("addCartBtn").addEventListener("click", function () {
+        let count = parseInt(document.getElementById("cartCount").textContent) || 0;
+        count++;
+        document.getElementById("cartCount").textContent = count;
+      });
+    }
+  </script>
+</body>
+
+</html>
