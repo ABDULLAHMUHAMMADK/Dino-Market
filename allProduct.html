@@ -1,115 +1,129 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="allProduct.css" />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
-      integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
     />
-  </head>
-  <body>
+</head>
+<body>
+    <!-- Header with Hamburger -->
     <header>
-      <nav>
-        <div class="logo">
-          <a href="./index.html"><img
-            src="./allProduct_imgs/Logo.webp"
-            alt=""
-            width="135"
-            height="22"
-          /></a>
-        </div>
-        <div class="tabs">
-          <a href="./allProduct.html">Female</a>
-          <a href="./male.html">Male</a>
-          <a href="./kids.html">Kids</a>
-          <a href="./allProduct.html">All Product</a>
-        </div>
-        <div class="cart">
-   
-          <a href="./addProduct.html"><button>Add Product</button></a>
+        <nav>
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./allProduct_imgs/Logo.webp" alt="" width="135" height="22" />
+                </a>
+            </div>
 
-          <div class="cart-icon-div">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div>
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-         <a href="./login.html"> <button>Login</button></a>
-          <div>/</div>
-         <a href="./register.html"> <button>register</button></a>
-        </div>
-      </nav>
+            <!-- Navigation Links -->
+            <div class="tabs" id="navLinks">
+                <a href="./allProduct.html">Female</a>
+                <a href="./male.html">Male</a>
+                <a href="./kids.html">Kids</a>
+                <a href="./allProduct.html">All Product</a>
+            </div>
+
+            <div class="cart">
+                <a href="./addProduct.html"><button>Add Product</button></a>
+                <div class="cart-icon-div">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <a href="./login.html"><button>Login</button></a>
+                <div>/</div>
+                <a href="./register.html"><button>register</button></a>
+            </div>
+        </nav>
     </header>
 
-    
     <main>
-      <div class="ProductRender" id="ProductRender"></div>
+        <div class="ProductRender" id="ProductRender"></div>
     </main>
 
-    <footer>
-        <div></div>
-        <div></div>
-        <div></div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="ring"></span>
+                    Dine Market
+                </div>
+                <p>Small, artisan label that offers a thoughtfully curated collection of high quality everyday essentials made.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">𝕏</a>
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">in</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Terms of use</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">How it works</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Support Center</a></li>
+                    <li><a href="#">24h Services</a></li>
+                    <li><a href="#">Quick Chat</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">Whatsapp</a></li>
+                    <li><a href="#">Support 24h</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2026 Dine Market</p>
+            <p>Design by: <strong>MUHAMMAD ABDULLAH</strong></p>
+            <p>Code by: <strong>MUHAMMAD ABDULLAH</strong></p>
+        </div>
     </footer>
 
-
-    <footer class="footer">
-    <div class="footer-top">
-
-      <div class="footer-brand">
-        <div class="logo">
-          <span class="ring"></span>
-          Dine Market
-        </div>
-        <p>Small, artisan label that offers a thoughtfully curated collection of high quality everyday essentials made.</p>
-        <div class="social-icons">
-          <a href="#" class="social-icon">𝕏</a>
-          <a href="#" class="social-icon">f</a>
-          <a href="#" class="social-icon">in</a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Terms of use</a></li>
-          <li><a href="#">Privacy policy</a></li>
-          <li><a href="#">How it works</a></li>
-          <li><a href="#">Contact us</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="#">Support Center</a></li>
-          <li><a href="#">24h Services</a></li>
-          <li><a href="#">Quick Chat</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="#">Whatsapp</a></li>
-          <li><a href="#">Support 24h</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <p>Copyright &copy; 2026 Dine Market</p>
-      <p>Design by: <strong>MUHAMMAD ABDULLAH</strong></p>
-      <p>Code by: <strong>MUHAMMAD ABDULLAH</strong></p>
-    </div>
-  </footer>
-
     <script src="./allProuduct.js"></script>
-  </body>
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.tabs a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
 </html>
