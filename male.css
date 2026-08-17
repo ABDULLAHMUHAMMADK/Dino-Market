@@ -115,7 +115,7 @@ header {
     padding: 30px 20px;
 }
 
-/* Product card link wrapper - removes default blue link styling */
+
 .box-link {
     text-decoration: none;
     color: inherit;
@@ -131,16 +131,17 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 300px;
-    height: 450px;
+    width: 250px;
+    height: 300px;
     border-radius: 20px 0px 20px 0px;
     transition: 0.5s;
     overflow: hidden;
-    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .box:hover {
     scale: 1.05;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .box img {
@@ -151,7 +152,6 @@ header {
     padding: 10px;
     background: #f8f7f7;
     aspect-ratio: 1/1;
-    box-shadow: 0 5px 15px #ddd;
     transition: 0.3s;
 }
 
